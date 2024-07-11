@@ -12,7 +12,13 @@ const idxRand = Math.floor(Math.random() *DUMMY_USERS.length);
 })
 export class UserComponent {
   selectedUser = DUMMY_USERS[idxRand];
+
   get imagePath() { 
     return  'assets/users/' + this.selectedUser.avatar;
+  }
+
+  onSelectUser() {
+    const idxRand = Math.floor(Math.random() *DUMMY_USERS.length);
+    this.selectedUser = DUMMY_USERS[idxRand];
   }
 }
