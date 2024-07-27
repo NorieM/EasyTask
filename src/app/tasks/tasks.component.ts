@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { TaskComponent } from "./task/task.component";
+import { TaskComponent } from './task/task.component';
 import { NewTaskComponent } from './new-task/new-task.component';
 
 @Component({
@@ -7,11 +7,11 @@ import { NewTaskComponent } from './new-task/new-task.component';
   standalone: true,
   imports: [TaskComponent, NewTaskComponent],
   templateUrl: './tasks.component.html',
-  styleUrl: './tasks.component.css'
+  styleUrl: './tasks.component.css',
 })
 export class TasksComponent {
-  @Input({required: true}) userId!: string;
-  @Input({required: true}) name!: string;
+  @Input({ required: true }) userId!: string;
+  @Input({ required: true }) name!: string;
   isAddingTask = false;
 
   tasks = [
@@ -41,14 +41,18 @@ export class TasksComponent {
   ];
 
   get selectedUserTasks() {
-    return this.tasks.filter((task)=> task.userId === this.userId);
+    return this.tasks.filter((task) => task.userId === this.userId);
   }
 
   onCompleteTask(id: string) {
-    this.tasks = this.tasks.filter((task)=> task.id !=id);
+    this.tasks = this.tasks.filter((task) => task.id != id);
   }
 
-  onStartAddTask(){
+  onStartAddTask() {
     this.isAddingTask = true;
+  }
+
+  onCancelAddTask() {
+    this.isAddingTask = false;
   }
 }
