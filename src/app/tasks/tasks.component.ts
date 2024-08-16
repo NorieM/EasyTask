@@ -1,7 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { TaskComponent } from './task/task.component';
 import { NewTaskComponent } from './new-task/new-task.component';
-import { type NewTaskData } from './task/task.model';
 import { TasksService } from './tasks.service';
 
 @Component({
@@ -22,10 +21,6 @@ export class TasksComponent {
 
   get selectedUserTasks() {
     return this.tasksService.getUserTasks(this.userId);
-  }
-
-  onCompleteTask(id: string) {
-    
   }
 
   onStartAddTask() {
