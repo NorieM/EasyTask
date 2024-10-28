@@ -1,5 +1,5 @@
 @if (isAddingTask) {
-  <app-new-task [userId]="userId" (close)="onCloseAddTask()"/>
+  <app-new-task [userId]="userId" [name]="name" (close)="onCloseAddTask()"/>
 }
 
 <section id="tasks">
